@@ -16,22 +16,22 @@ Responsive UI — Mobile-friendly layout with a collapsible controls panel and c
 
 Up to 100 aircraft displayed simultaneously
 
-Project Structure:
-├── frontend/               # React + Vite app
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── CesiumViewer/   # 3D globe, entities, click handlers
-│   │   │   ├── AircraftList/   # Sidebar aircraft list
-│   │   │   ├── Controls/       # Filter & view mode controls
-│   │   │   └── UI/             # InfoCard, StatusBadge, LoadingSpinner
-│   │   ├── hooks/              # useAircraftData, useAircraftOrientation
-│   │   ├── services/api/       # aircraftService (HTTP + WS)
-│   │   ├── types/              # Aircraft & AircraftResponse interfaces
-│   │   └── utils/              # Heading/orientation helpers
-│   └── public/aircraft-icons/  # PNG icons per aircraft category
-│
-└── backend/                # Node.js Express server
-    └── src/
-        ├── server.js           # REST endpoints + Socket.io broadcasts
-        └── services/
-            └── OpenSkyService.js  # OAuth2 token management + API calls
+Tech Stack
+
+Frontend
+Tech	Purpose
+React 19 + TypeScript -	UI framework
+Vite 7 - Build tool
+CesiumJS 1.137 + Resium	- 3D globe rendering
+Tailwind CSS v4 - Styling
+Socket.io-client - Real-time WebSocket updates
+TanStack Query - Data fetching/caching
+Framer Motion - Animations
+Zustand - State management
+
+Backend
+Tech  Purpose
+Node.js + Express - REST API & WebSocket server
+Socket.io - Push updates to connected clients
+Axios - OpenSky API requests
+OpenSky Network API - Live flight data source
